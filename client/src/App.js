@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Nav from "./components/Nav";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           </ul>
         </div>
       </div>
+      <footer className='footer border border-primary'>
+        Footer
+      </footer>
     </div>
   );
 }
