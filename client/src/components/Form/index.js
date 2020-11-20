@@ -1,12 +1,19 @@
 import React from 'react'
 
-function From() {
+function From({value, handleSearchBtn, handleInputChange}) {
+  // console.log(value)
   return (
+
     <div className=' container border border-primary m-1 p-1 mx-auto' style={{width: '100vw'}}>
-      <form>
+      <form
+        type='text'
+        onChange={handleInputChange}
+        value={value}
+        name='book'
+      >
         <div>search new book from</div>
         <input></input>
-        <button type='submit'>Serach Book</button>
+        <button type='submit' onClick={handleSearchBtn}>Serach Book</button>
       </form>
     </div>
   )

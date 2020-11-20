@@ -1,22 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import From from '../../components/Form';
-
+import ResultList from '../../components/ResultList';
+import API from '../../utils/API';
 function Search() {
-  return (
-    <div>
-      <From/>
-      <div id='searchResult' className='container border border-primary mx-auto' style={{width: '100vw'}}>
-        <div>
-          Search Result Container
-        </div>
-        <div className='row border border-primary m-1 p-1'>
-          <ul className='col-11 border border-primary m-1 p-1 mx-auto'>
-            Result
-          </ul>
-        </div>
+  const [search, setSearch] = useState('searchs');
+  const [books, setBooks] = useState([]);
+
+  const handleSearchBtn = (event) => {
+    event.preventDefault();
+    API.searchBooks(search)
+      .then(res => {
+        let itemsArray = res.data.items;
+        // console.log(itemsArray);
+        return itemsArray
+      })
+      .then(items => {
+        // console.log(items);
+        setBooks([...items]);
+        // if(books.length) console.log(books);
+      })
+      .catch(err => console.log(err));
+  }
+
+  const handleInputChange = (event) => {
+    event.preventDefault();
+    const { value } = event.target;
+    setSearch(value)
+}
+
+    return (
+      <div>
+        <From
+          value={search}
+          handleSearchBtn={handleSearchBtn}
+          handleInputChange={handleInputChange}/>
+
+        <ResultList
+          books={books}/>
       </div>
-    </div>
-  )
+    )
+
 }
 
 export default Search;

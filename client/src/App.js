@@ -9,18 +9,20 @@ import Search from "./pages/Search";
 function App() {
   return (
     <div className="App w-100 h-100">
-      <Router>
-        <Nav/>
-        <Switch>
-          <Router exact path='/books/save'>
-            <Save/>
-          </Router>
-          <Router path='*'>
-            <Search/>
-          </Router>
-        </Switch>
-      </Router>
-
+      <div className='wrapper'>
+        <Router>
+          <Nav/>
+          <Switch>
+            <Router exact path='/books/save'>
+              <Save/>
+            </Router>
+            <Router path='*'>
+              <Search/>
+            </Router>
+          </Switch>
+        </Router>
+        <div className="push"></div>
+      </div>
       <Footer/>
     </div>
   );
