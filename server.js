@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 // mongodb connection
 const mongoose = require('mongoose');
 mongoose.connect(
-  process.env.MONGODB_URI  || 'mongodb://127.0.0.1:27017/googlebooks',
+  process.env.MONGODB_URI  || 'mongodb://localhost/googlebooks',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -29,7 +29,7 @@ connection.once('open', () => {
 })
 
 // Define API routes here
-
+require('./router/apiRouter')(app)
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {

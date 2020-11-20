@@ -26,19 +26,19 @@ function Search() {
     event.preventDefault();
     const { value } = event.target;
     setSearch(value)
-}
+  }
 
-    return (
-      <div>
-        <From
-          value={search}
-          handleSearchBtn={handleSearchBtn}
-          handleInputChange={handleInputChange}/>
+  return (
+    <div>
+      <From
+        value={search}
+        handleSearchBtn={handleSearchBtn}
+        handleInputChange={handleInputChange}/>
 
-        <ResultList
-          books={books}/>
-      </div>
-    )
+      <ResultList
+        books={books}/>
+    </div>
+  )
 
 }
 

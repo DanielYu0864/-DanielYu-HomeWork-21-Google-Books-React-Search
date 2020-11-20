@@ -1,6 +1,12 @@
-import React from 'react'
+import React from 'react';
+import dbAPI from '../../utils/dbAPI';
 
 function Results({results}) {
+  const handleSave = bookData => {
+    dbAPI.saveBook(bookData)
+        .then(res => console.log(res.data))
+        .catch(err => console.error(err));
+  }
   return (
     <>
       {
@@ -15,6 +21,13 @@ function Results({results}) {
                     <h5 className="card-title">{result.volumeInfo.title}</h5>
                     <p className="card-text">{result.volumeInfo.authors}</p>
                     <a href={result.volumeInfo.infoLink}><button className='m-9 mb-5'>Look More</button></a>
+                    <button onClick={() => handleSave({
+                      title: result.volumeInfo.title,
+                      authors : result.volumeInfo.authors,
+                      image : result.volumeInfo.imageLinks.thumbnail,
+                      description : result.volumeInfo.description,
+                      link : result.volumeInfo.infoLink
+                    })}>Save</button>
                     <p className="card-text">{result.volumeInfo.description}</p>
                   </div>
                 </div>
