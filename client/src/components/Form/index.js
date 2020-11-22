@@ -11,9 +11,20 @@ function From({value, handleSearchBtn, handleInputChange}) {
         value={value}
         name='book'
       >
-        <div>search new book from</div>
-        <input></input>
-        <button type='submit' onClick={handleSearchBtn}>Search Book</button>
+
+      <div className='input-group' style={{'width': '70%', 'marginLeft': '16%'}}>
+        <div className='input-group-prepend'>
+          <span className='input-group-text'>Find Books</span>
+        </div>
+        <input type='text' aria-label='search' className='form-control'/>
+        <button
+          type='submit'
+          className='ml-1 btn btn-primary'
+          data-toggle='button'
+          onClick={handleSearchBtn}>Search Book</button>
+      </div>
+
+
       </form>
     </div>
   )

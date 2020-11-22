@@ -16,6 +16,11 @@ footer {
   text-align: center;
 }
 
+.title {
+  font-size: x-large;
+  margin-top: 10px;
+}
+
 .wrapper {
   min-height: 99vh;
   margin-bottom: -50px;

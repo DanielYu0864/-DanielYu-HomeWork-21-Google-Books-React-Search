@@ -13,12 +13,12 @@ function App() {
         <Router>
           <Nav/>
           <Switch>
-            <Router exact path='/books/save'>
+            <Route exact path='/books/save'>
               <Save/>
-            </Router>
-            <Router path='*'>
+            </Route>
+            <Route path='*'>
               <Search/>
-            </Router>
+            </Route>
           </Switch>
         </Router>
         <div className="push"></div>

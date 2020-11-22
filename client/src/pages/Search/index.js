@@ -3,12 +3,15 @@ import From from '../../components/Form';
 import ResultList from '../../components/ResultList';
 import API from '../../utils/API';
 function Search() {
-  const [search, setSearch] = useState('searchs');
+  const [search, setSearch] = useState('');
   const [books, setBooks] = useState([]);
 
   const handleSearchBtn = (event) => {
     event.preventDefault();
-    API.searchBooks(search)
+    if(!search) {
+      return;
+    } else {
+      API.searchBooks(search)
       .then(res => {
         let itemsArray = res.data.items;
         // console.log(itemsArray);
@@ -20,6 +23,8 @@ function Search() {
         // if(books.length) console.log(books);
       })
       .catch(err => console.log(err));
+    }
+
   }
 
   const handleInputChange = (event) => {

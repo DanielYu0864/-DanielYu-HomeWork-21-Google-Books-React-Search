@@ -7,7 +7,7 @@ function ResultList({books}) {
     console.log('result', results);
     return (
       <div id='searchResult' className='container border border-primary mx-auto'>
-        <div>
+        <div className='title'>
           Search Result Container
         </div>
         <div className='row border border-primary m-1 p-1'>
@@ -20,7 +20,7 @@ function ResultList({books}) {
   } else {
     return (
       <div id='searchResult' className='container border border-primary mx-auto'>
-        <div>
+        <div className='title'>
           Search Result Container
         </div>
         <div className='row border border-primary m-1 p-1'>

@@ -28,7 +28,7 @@ function Save() {
     load();
   }, []);
 
-  if(!isLoad) {
+  if(!isLoad || books.length === 0) {
     return (
       <div id='saveList' className='container border border-primary mx-auto mt-2' style={{width: '100vw'}}>
         <div>
@@ -36,7 +36,7 @@ function Save() {
         </div>
         <div className='row border border-primary m-1 p-1'>
           <ul className='col-11 border border-primary m-1 p-1 mx-auto'>
-            Save List
+            Save List is empty
           </ul>
         </div>
       </div>
@@ -44,7 +44,7 @@ function Save() {
   } else {
     return (
       <div id='saveList' className='container border border-primary mx-auto mt-2' style={{width: '100vw'}}>
-        <div>
+        <div className='title'>
           Save List
         </div>
         <div className='row border border-primary m-1 p-1'>
