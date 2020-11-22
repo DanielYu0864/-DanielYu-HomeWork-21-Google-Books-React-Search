@@ -4,7 +4,7 @@ import Results from '../Results';
 function ResultList({books}) {
   const results = books;
   if(books.length >= 10) {
-    console.log('result', results);
+    // console.log('result', results);
     return (
       <div id='searchResult' className='container border border-primary mx-auto'>
         <div className='title'>

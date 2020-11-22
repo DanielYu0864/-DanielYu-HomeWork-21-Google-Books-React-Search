@@ -16,7 +16,12 @@ function From({value, handleSearchBtn, handleInputChange}) {
         <div className='input-group-prepend'>
           <span className='input-group-text'>Find Books</span>
         </div>
-        <input type='text' aria-label='search' className='form-control'/>
+        <input
+          type='text'
+          aria-label='search'
+          className='form-control'
+          placeholder="search by book's name or author"
+        />
         <button
           type='submit'
           className='ml-1 btn btn-primary'
