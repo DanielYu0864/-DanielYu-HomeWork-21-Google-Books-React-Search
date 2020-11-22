@@ -1,7 +1,7 @@
 import React from 'react'
 
 function From({value, handleSearchBtn, handleInputChange}) {
-  // console.log(value)
+  // call the google book api when form is submit
   return (
 
     <div className=' container border border-primary m-1 p-1 mx-auto' style={{width: '100vw'}}>

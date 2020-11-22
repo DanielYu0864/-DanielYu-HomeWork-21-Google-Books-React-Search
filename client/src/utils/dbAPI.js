@@ -1,13 +1,17 @@
 const axios = require('axios');
 
 export default {
-  saveBook : function(bookData){
+  //* api call to connect with node server
+  // save book info to database
+  saveBook : bookData => {
       return axios.post("/api/books", bookData);
   },
-  allBooks : function(){
+  // get all books info from database
+  allBooks : () => {
       return axios.get("/api/books");
   },
-  deleteBook : function(id){
-      return axios.delete("/api/books/"+id)
+  // delete book from the database
+  deleteBook : id => {
+      return axios.delete("/api/books/"+id);
   }
-}
+};

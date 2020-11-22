@@ -5,7 +5,7 @@ import API from '../../utils/API';
 function Search() {
   const [search, setSearch] = useState('');
   const [books, setBooks] = useState([]);
-
+  // search the books when the search btn click
   const handleSearchBtn = (event) => {
     event.preventDefault();
     if(!search) {
@@ -14,19 +14,16 @@ function Search() {
       API.searchBooks(search)
       .then(res => {
         let itemsArray = res.data.items;
-        // console.log(itemsArray);
         return itemsArray
       })
       .then(items => {
-        // console.log(items);
         setBooks([...items]);
-        // if(books.length) console.log(books);
       })
       .catch(err => console.log(err));
     }
 
   }
-
+  // change the input value
   const handleInputChange = (event) => {
     event.preventDefault();
     const { value } = event.target;

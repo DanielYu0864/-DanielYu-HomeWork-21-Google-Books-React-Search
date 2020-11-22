@@ -1,33 +1,31 @@
 import React, {useEffect, useState} from 'react';
-// import { db, remove } from '../../../../models/Books';
 import SaveList from '../../components/SaveList';
 import dbAPI from '../../utils/dbAPI';
 
 function Save() {
   const [books, setBooks] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
-
+  // load the book info from database
   const load = () => {
     dbAPI.allBooks()
       .then(res => {
-        // console.log(res.data);
         setBooks([...res.data]);
         setIsLoad(true);
       })
       .catch(err => console.error(err));
   }
-
+  // delet the book from database
   const remove = (id) => {
     dbAPI.deleteBook(id)
       .then(res => load())
       .catch(err => console.error(err));
 
   }
-
+  // load the book info from database every time when the page is render
   useEffect(() => {
     load();
   }, []);
-
+  // make sure the data is been load
   if(!isLoad || books.length === 0) {
     return (
       <div id='saveList' className='container border border-primary mx-auto mt-2' style={{width: '100vw'}}>
