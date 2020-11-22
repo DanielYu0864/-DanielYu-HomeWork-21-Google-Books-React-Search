@@ -13,7 +13,7 @@ function From({value, handleSearchBtn, handleInputChange}) {
       >
         <div>search new book from</div>
         <input></input>
-        <button type='submit' onClick={handleSearchBtn}>Serach Book</button>
+        <button type='submit' onClick={handleSearchBtn}>Search Book</button>
       </form>
     </div>
   )

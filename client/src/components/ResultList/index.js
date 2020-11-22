@@ -25,7 +25,7 @@ function ResultList({books}) {
         </div>
         <div className='row border border-primary m-1 p-1'>
           <ul className='col-11 border border-primary m-1 p-1 mx-auto'>
-            Result
+            Search for result
           </ul>
         </div>
       </div>
