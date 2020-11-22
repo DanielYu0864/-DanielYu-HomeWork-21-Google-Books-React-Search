@@ -8,6 +8,7 @@ function Results({results}) {
         .catch(err => console.error(err));
     alert('Book save!')
   }
+
   return (
     <>
       {
@@ -15,7 +16,7 @@ function Results({results}) {
           <div key={result.id} className="card m-9 p-1 border border-primary mx-auto" style={{'marginBottom': '12px'}}>
             <div className="row no-gutters">
                 <div className="col-md-4">
-                  <img src={result.volumeInfo.imageLinks.thumbnail} className="card-img" alt="image"/>
+                  <img src={result.volumeInfo.imageLinks.smallThumbnail} className="card-img" alt="image"/>
                 </div>
                 <div className="col-md-8 mx-auto">
                   <div className="card-body">
