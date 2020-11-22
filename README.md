@@ -1,8 +1,29 @@
 # Unit 21 Google Books Search
 
-* Search Page
+### Project Description
 
-* Save Page
+* A sample MERN stack React application that can search the book's info from Google Books, and save user's favorite books to the database
+* Use MongoDb as database
+* The application is deploy on Heroku
+
+
+### Usage
+#### Search Page
+
+![search](./screenshot/search.png)
+
+#### Save Page
+
+![search](./screenshot/save.png)
+
+#### API Router
+
+![search](./screenshot/router.png)
+
+### Leangue Ues :
+``
+React, MongoDB, JavaScript, Node.js, bootstrap
+``
 
 ## About
 * Project link: https://homework21googlebooks.herokuapp.com/
