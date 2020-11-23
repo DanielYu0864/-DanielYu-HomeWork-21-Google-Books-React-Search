@@ -14,6 +14,7 @@ function Search() {
       API.searchBooks(search)
       .then(res => {
         let itemsArray = res.data.items;
+        // console.log(itemsArray);
         return itemsArray
       })
       .then(items => {
