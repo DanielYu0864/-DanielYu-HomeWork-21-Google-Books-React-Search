@@ -16,7 +16,7 @@ function Results({results}) {
           <div key={result.id} className="card m-9 p-1 border border-primary mx-auto" style={{'marginBottom': '12px'}}>
             <div className="row no-gutters">
                 <div className="col-md-4">
-                  <img src={result.volumeInfo.imageLinks !== undefined ? result.volumeInfo.imageLinks.smallThumbnail : 'url'} className="card-img" alt="image"/>
+                  <img src={result.volumeInfo.imageLinks !== undefined ? result.volumeInfo.imageLinks.smallThumbnail : 'https://zcms-rubais.softplace.eu/images/2000X3000_noimage.gif'} className="card-img" alt="image"/>
                 </div>
                 <div className="col-md-8 mx-auto">
                   <div className="card-body">
